@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research | Purna Kukadiya</title>
+  <meta name="description" content="Doctoral research of Purna Kukadiya on FDI attack detection, synchrophasor anomaly detection, measurement recovery under DoS attacks, and real-time synchrophasor prediction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="index.html">Purna Kukadiya</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Research</h1>
+      <p>Detecting and mitigating cyber attacks on smart-grid monitoring using SCADA and synchrophasor measurements.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Doctoral Research Contributions</h2>
+
+      <!-- 1 -->
+      <article class="project">
+        <h3>Statistical and Measurement-Aware Detection of FDI Attacks</h3>
+        <div class="tags">
+          <span class="tag">False Data Injection</span><span class="tag">Weibull Distribution</span>
+          <span class="tag">SCADA + PMU</span><span class="tag">Event Classification</span>
+        </div>
+        <ul>
+          <li>Developed a topology-independent statistical detector for FDI attacks, based on the Weibull distribution and using SCADA and PMU measurements. It also detects attacks designed to evade conventional bad-data detection.</li>
+          <li>Extended the approach to a two-stage framework that combines measurement-aware features with spatial classification to tell FDI attacks apart from legitimate power-system events.</li>
+          <li>Evaluated detection across varying attack magnitudes using RTDS-generated IEEE 14-bus measurements.</li>
+        </ul>
+        <div class="project-meta"><strong>Output:</strong> IEEE PES General Meeting 2024 [C4].</div>
+      </article>
+
+      <!-- 2 -->
+      <article class="project">
+        <h3>Transformer-Autoencoder Anomaly Detection for Synchrophasor Data</h3>
+        <div class="tags">
+          <span class="tag">Transformer</span><span class="tag">Autoencoder</span>
+          <span class="tag">Unsupervised Learning</span><span class="tag">HIL Dataset</span>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><b>97.9%</b><span>F1 score</span></div>
+          <div class="metric"><b>99.8%</b><span>ROC-AUC</span></div>
+        </div>
+        <ul>
+          <li>Developed a reconstruction-based Transformer autoencoder that detects anomalies in short PMU time-series windows, even when the training data contains both normal and anomalous measurements.</li>
+          <li>Evaluated the model on cyber-physical HIL synchrophasor measurements.</li>
+          <li>Co-developed an open-source synchrophasor dataset of cyber, physical and combined disturbances on the WVU RTDS testbed. The coauthored paper received the <strong>SGSMA 2026 Second Best Paper Award</strong>.</li>
+        </ul>
+        <div class="project-meta"><strong>Outputs:</strong> IEEE ETFG 2025 [C2]; SGSMA 2026 [C1].</div>
+      </article>
+
+      <!-- 3 -->
+      <article class="project">
+        <h3>Measurement Recovery for Hybrid State Estimation under DoS Attacks</h3>
+        <div class="tags">
+          <span class="tag">Denial of Service</span><span class="tag">CNN-LSTM</span>
+          <span class="tag">WLS</span><span class="tag">Cubature Kalman Filter</span>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><b>23 / 25</b><span>PMU-loss scenarios with lower SE error</span></div>
+        </div>
+        <ul>
+          <li>Studied how sustained, DoS-related PMU data loss affects weighted least-squares (WLS) and cubature Kalman filter (CKF) hybrid state estimation.</li>
+          <li>Developed a CNN-LSTM model that uses PMU and RTU measurements to predict missing synchrophasor channels, without training a separate model for each affected channel.</li>
+          <li>Achieved lower state-estimation error than the compared methods in 23 of 25 evaluated PMU-loss scenarios.</li>
+        </ul>
+        <div class="project-meta"><strong>Output:</strong> IEEE Transactions on Industrial Informatics, 2024 [J2].</div>
+      </article>
+
+      <!-- 4 -->
+      <article class="project">
+        <h3>Real-Time Synchrophasor Prediction and Field-Data Validation</h3>
+        <div class="tags">
+          <span class="tag">TSMixer</span><span class="tag">RevIN</span>
+          <span class="tag">Field PMU Data</span><span class="tag">SEL Hardware PMUs</span>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><b>6.9&times;10<sup>&minus;4</sup></b><span>MAE</span></div>
+          <div class="metric"><b>6 ms</b><span>Inference time</span></div>
+          <div class="metric"><b>37 PMUs</b><span>765/400 kV field network</span></div>
+        </div>
+        <ul>
+          <li>Developed an enhanced TSMixer with reversible instance normalisation to predict synchrophasor measurements while data is unavailable.</li>
+          <li>Evaluated it on field measurements from 37 PMUs on a 765/400&nbsp;kV network, and on an IEEE 39-bus RTDS HIL testbed with SEL hardware PMUs.</li>
+          <li>Assessed the effect of the predictions on downstream WLS state estimation.</li>
+        </ul>
+        <div class="project-meta"><strong>Outputs:</strong> IEEE Transactions on Industry Applications, 2026 [J1]; NPSC 2024 [C3].</div>
+      </article>
+
+      <p style="margin-top:28px"><a class="btn" href="publications.html">See the full publication list &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Experimental Platforms</h2>
+      <div class="gallery" style="margin-bottom:24px">
+        <figure class="g-item g-wide">
+          <a href="images/wvu-hil-setup.jpg"><img src="images/wvu-hil-setup.jpg" alt="Research team in front of RTDS and Typhoon HIL testbeds at West Virginia University" loading="lazy"></a>
+          <figcaption><strong>RTDS and HIL testbed, West Virginia University (2025)</strong>The cyber-power testbed used for synchrophasor anomaly-detection research and the open-source HIL dataset.</figcaption>
+        </figure>
+        <figure class="g-item">
+          <a href="images/sldc-jabalpur.jpg"><img src="images/sldc-jabalpur.jpg" alt="Grid control room at the State Load Despatch Centre, Jabalpur" loading="lazy"></a>
+          <figcaption><strong>State Load Despatch Centre, Jabalpur</strong>Seeing SCADA-based grid monitoring in a real control room.</figcaption>
+        </figure>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Hardware-in-the-Loop Testbeds</h3>
+          <p>RTDS and RSCAD cyber-power testbeds (IEEE 14-bus and 39-bus), with GTNET communication and SEL hardware PMUs.</p>
+        </div>
+        <div class="card">
+          <h3>Synchrophasor Infrastructure</h3>
+          <p>IEEE C37.118.2 data streaming, hardware and virtual PMUs, and openHistorian for data archiving.</p>
+        </div>
+        <div class="card">
+          <h3>Field Data</h3>
+          <p>Synchrophasor measurements from 37 PMUs on a 765/400&nbsp;kV transmission network.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>&copy; <span id="year">2026</span> Purna Kukadiya &middot; IIT Indore</span>
+    <div class="footer-links">
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/Purna_Kukadiya_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
